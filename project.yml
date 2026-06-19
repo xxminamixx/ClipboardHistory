@@ -1,0 +1,33 @@
+name: ClipboardHistory
+options:
+  bundleIdPrefix: com.local
+  deploymentTarget:
+    macOS: "13.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  ClipboardHistory:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - ClipboardHistory
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.local.ClipboardHistory
+        INFOPLIST_FILE: ClipboardHistory/Info.plist
+        CODE_SIGN_ENTITLEMENTS: ClipboardHistory/ClipboardHistory.entitlements
+        ENABLE_APP_SANDBOX: NO
+        SWIFT_VERSION: "5.9"
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+    entitlements:
+      path: ClipboardHistory/ClipboardHistory.entitlements
